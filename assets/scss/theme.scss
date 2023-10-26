@@ -1,0 +1,414 @@
+// =============================================================================
+// STENCIL
+// =============================================================================
+
+
+// Tools
+// -----------------------------------------------------------------------------
+//
+// 1. Import Citadel's toolkit for use.
+//
+// -----------------------------------------------------------------------------
+
+@import "../../node_modules/@bigcommerce/citadel/dist/tools/toolkit"; // 1
+@import "tools/tools";
+
+// Settings
+// -----------------------------------------------------------------------------
+//
+// 1. Stencil global settings get imported first.
+// 2. Import all Citadel and Foundation settings.
+// 3. Import Citadel's version of foundation.
+//      - This enables the ability to "null" variables in the Stencil settings.
+// 4. Import Stencil's component settings overrides.
+// 5. Import tools which set/reset Citadel's global settings, to be consumed by
+//    the rest of Stencil.
+//
+// -----------------------------------------------------------------------------
+
+@import "settings/supermarket/global";
+
+@import "settings/global/global"; // 1
+
+@import "../../node_modules/@bigcommerce/citadel/dist/settings/global/global"; // 2
+
+@import "settings/global/tools"; // 5
+
+@import "../../node_modules/@bigcommerce/citadel/dist/settings/normalize/normalize"; // 2
+@import "../../node_modules/@bigcommerce/citadel/dist/settings/foundation/foundation"; // 2
+@import "../../node_modules/@bigcommerce/citadel/dist/settings/bigcommerce/bigcommerce"; // 2
+
+@import "../../node_modules/@bigcommerce/citadel/dist/vendor/foundation/foundation"; // 3
+
+@import "settings/normalize/normalize"; // 4
+@import "settings/vendor/vendor"; // 4
+@import "settings/foundation/foundation"; // 4
+@import "settings/citadel/citadel"; // 4
+@import "settings/stencil/stencil"; // 4
+@import "settings/layouts/layouts"; // 4
+
+@import "settings/emthemesModez/emthemesModez";
+
+
+// Utilities
+// -----------------------------------------------------------------------------
+
+@import "utilities/utilities";
+@import "utilities/emthemesModez/utilities";
+@import "../../node_modules/@bigcommerce/citadel/dist/utilities/utilities";
+
+// Fonts
+// -----------------------------------------------------------------------------
+
+@import "fonts/fonts";
+
+// emthemes-modez added 3rd-party icons
+// @import "../../node_modules/font-awesome/scss/font-awesome";
+@import "vendor/font-awesome/font-awesome";
+
+
+// Components
+// -----------------------------------------------------------------------------
+//
+// 1. Import Citadel's normalize dependency.
+// 2. Import Citadel's components.
+// 2. Import Stencil's component additions and custom components.
+//
+// -----------------------------------------------------------------------------
+
+@import "../../node_modules/@bigcommerce/citadel/dist/vendor/normalize/normalize"; // 1
+@import "../../node_modules/@bigcommerce/citadel/dist/components/components"; // 2
+@import "components/components"; // 3
+
+
+// Layouts
+// -----------------------------------------------------------------------------
+//
+// 1. Stencil design layout files (example: Header or Footer).
+//
+// -----------------------------------------------------------------------------
+
+@import "layouts/layouts"; // 1
+
+@import "vendor/jstree/style";
+@import "vendor/jstree/style-supermarket";
+
+
+.page-contactus{margin: 0;}
+.contact-body .body .container {
+    max-width: 100%;
+    padding: 0;
+}
+.contact-body .body .container .container {
+    max-width: 94.53846rem;
+    padding: 0 2.26923rem;
+}
+.cu-content-wrapper{
+    background-image: url(https://cdn11.bigcommerce.com/s-y75cxdpwt2/product_images/uploaded_images/ny-banner-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 10%;
+    min-height: 50px;
+    background-position: center center;
+    background-attachment: scroll;
+    position: relative;
+}
+.contactus-content {
+    display: inline-block;
+}
+.cu-content-inner{
+    display: flex;
+    justify-content: space-between;
+}
+.cu-content-left, .cu-content-right {
+    width: calc(50% - 15px);
+    z-index: 4;
+}
+.cu-box-overlay {
+    background-color: #fff;
+    opacity: 0.7999999999999999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    pointer-events: none;
+    display: inline-block;
+}
+.cu-heading-component {
+    position: relative;
+    z-index: 4;
+}
+.cu-heading-component h1 {
+    color: rgba(68, 29, 107, 1);
+    font-weight: 700;
+    font-size: 60px;
+    margin: 0;
+}
+h3.cu-content-heading {
+    color: #441d6b;
+    font-size: 24px;
+    font-weight: 600;
+}
+.contactus-testimonial {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+.testimonial-item {
+    width: calc(33.33% - 15px);
+    border: 4px solid #edb8dd;
+    padding: 40px 20px 10px;
+    text-align: center;
+}
+.testimonial-heading {
+    margin-bottom: 20px;
+}
+.testimonial-heading i {
+    font-size: 32px;
+    color: #42459d;
+}
+.testimonial-content {
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+p.testimonial-name {
+    font-size: 16px;
+    color: #42459d;
+    font-weight: 600;
+}
+p.testimonial-date {
+    color: #bdc3c7;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.contact-details-item {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-between;
+}
+.contact-icon {
+    width: 100px;
+}
+.contact-info-title {
+    color: #552586;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+.contact-info {
+    width: calc(100% - 120px);
+}
+.contact-info-content {
+    color: #441d6b;
+    font-size: 20px;
+    font-weight: 800;
+}
+.contactus-content .form-input {
+    background: transparent;
+    border: 2px solid #441d6b;
+    color: #441d6b;
+}
+.contactus-content label.form-label {
+    color: #441d6b;
+    font-size: 15px;
+}
+.contact-body .navList--aside {
+    display: none;
+}
+/*----------------- page franchising2 -----------*/
+.franchising .page-sidebar {
+    display: none;
+}
+.franchising-half-row{ display: flex;}
+.franchising-half-row .half-row-left, .franchising-half-row .half-row-right {
+    width: 50%;
+}
+.franchising-bg-image{
+    
+    background-size: cover;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-color: #000;
+    background-attachment: scroll;
+}
+.own-store .franchising-bg-image{
+	background-image: url(https://cdn11.bigcommerce.com/s-y75cxdpwt2/product_images/uploaded_images/own-store-bg.jpg);
+	background-repeat: repeat;
+	min-height: 720px;
+    background-position: -126px center;
+}
+.half-row-text-inner {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.franchising-heading-component h1 {
+    font-family: "IBM Plex Serif";
+    font-size: 64px;
+    color: #212121;
+    letter-spacing: -2px;
+    font-weight: 300;
+    position: relative;
+    padding-bottom: 25px;
+    line-height: normal;
+    margin-top: 0;
+}
+.franchising-heading-component h1:after {
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    content: "";
+    background-color: #977d7c;
+    bottom: 0;
+    left: 0;
+}
+.franchising-heading-component h4 {
+    font-family: "Sarabun";
+    font-size: 24px;
+    font-weight: 300;
+    color: #977d7c;
+    line-height: normal;
+    letter-spacing: normal;
+}
+.who-we-are .franchising-bg-image{
+	background-image: url(https://cdn11.bigcommerce.com/s-y75cxdpwt2/product_images/uploaded_images/who-we-are-bg.jpg);
+	background-repeat: no-repeat;
+	min-height: 480px;
+    background-position: center center;
+}
+.franchising-heading-box {
+    background: #f7b5a8;
+    padding: 40px 10%;
+    text-align: center;
+}
+.franchising-heading-box h3 {
+    text-align: center;
+    font-size: 30px;
+    font-family: "IBM Plex Serif";
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: -1px;
+    margin-top: 22px;
+}
+.franchising-heading-box h5 {
+    margin: 0;
+    font-family: "Sarabun";
+    font-size: 14px;
+    font-weight: 600;
+    color: #9f5c5d;
+    letter-spacing: 2px;
+}
+.why-our-products {
+    background: #fff6f1;
+    padding: 100px 10%;
+}
+.franchising-heading-component h2 {
+    font-size: 40px;
+    color: #9f5c5d;
+    text-align: center;
+    font-family: "Sarabun";
+    margin-top: 0;
+    margin-bottom: 60px;
+}
+.why-our-products-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.why-product {
+    text-align: center;
+    width: calc(33.333333333333336% - 20px);
+}
+.why-product-icon {
+    margin-bottom: 30px;
+}
+.why-product-heading {
+    font-family: "IBM Plex Serif";
+    font-size: 30px;
+    letter-spacing: -1px;
+    color: #000;
+    margin-bottom: 20px;
+}
+.why-product-text {
+    color: #977d7c;
+    font-size: 20px;
+    font-family: Sarabun;
+    font-weight: 300;
+}
+.step1 .franchising-bg-image{
+	background-image: url(https://cdn11.bigcommerce.com/s-y75cxdpwt2/product_images/uploaded_images/franchising-step1-bg.jpg);
+	background-repeat: no-repeat;
+	min-height: 720px;
+    background-position: center center;
+} 
+.step2 .franchising-bg-image{
+	background-image: url(https://cdn11.bigcommerce.com/s-y75cxdpwt2/product_images/uploaded_images/franchising-step2-bg.jpg);
+	background-repeat: no-repeat;
+	min-height: 720px;
+    background-position: center center;
+}
+.step3 .franchising-bg-image{
+	background-image: url(https://cdn11.bigcommerce.com/s-y75cxdpwt2/product_images/uploaded_images/franchising-step3-bg.jpg);
+	background-repeat: no-repeat;
+	min-height: 720px;
+    background-position: center center;
+}
+.have-questions .franchising-bg-image{
+	background-image: url(https://cdn11.bigcommerce.com/s-y75cxdpwt2/product_images/uploaded_images/have-questions-bg.jpg);
+	background-repeat: no-repeat;
+	min-height: 480px;
+    background-position: center center;
+}
+.franchising-contact-form {
+    background: #f7f8fb;
+    padding: 100px 15%;
+}
+h1.franchising-contact-heading {
+    text-align: center;
+    color: #171c8e;
+    font-size: 48px;
+    font-family: "IBM Plex Serif";
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+.franchising-full-row.blank-row{
+    background: #fff6f1; 
+    padding: 100px 10%;
+}
+
+@media only screen and (max-width: 767px) {
+    .contact-body .body .container .container{padding: 0 .75rem;}
+    .cu-heading-component h1{font-size: 40px;}
+    .cu-content-inner { flex-direction: column;}
+    .cu-content-left, .cu-content-right {width: 100%;}
+    .contact-details-item {flex-direction: column;}
+    .contactus-testimonial {flex-direction: column;}
+    .testimonial-item {width: 100%; margin-bottom: 15px;}
+    .franchising-half-row {   flex-direction: column;}
+    .franchising-half-row .half-row-left, .franchising-half-row .half-row-right { width: 100%;}
+    .half-row-text-inner{padding: 60px 20px;}
+    .franchising-heading-component h1{font-size: 43px;}
+    .own-store .half-row-left, .step1 .half-row-left, .step3 .half-row-left { order: 2;}
+    .why-our-products { padding: 60px 5% 0px;}
+    .franchising-heading-component h2 {font-size: 32px; margin-bottom: 40px;}
+    .why-our-products-inner {flex-direction: column;}
+    .why-product { width: 100%; margin-bottom: 60px;}
+    .franchising-heading-component h4 {font-size: 20px;}
+    .own-store .franchising-bg-image, 
+    .step1 .franchising-bg-image, 
+    .step2 .franchising-bg-image,
+    .step3 .franchising-bg-image {min-height: 360px;}
+    .franchising-full-row.blank-row{padding: 60px 20px;}
+    .franchising-contact-form {padding: 60px 20px;}
+    h1.franchising-contact-heading {font-size: 36px;}
+} 

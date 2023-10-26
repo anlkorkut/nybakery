@@ -1,0 +1,100 @@
+---
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+shop_by_brand:
+    limit: {{theme_settings.max_shop_by_brand}}
+---
+{{#partial "page"}}
+<main class="page page-contactus">
+    <div class="container">
+        {{!--{{#if theme_settings.layout '===' 'left-sidebar'}}
+            <div class="page-sidebar">
+                {{> components/papa-supermarket/home/sidebar}}
+            </div>
+        {{else}}
+            {{#if page.sub_pages}}
+                <div class="page-sidebar page-sidebar--right">
+                    {{> components/papa-supermarket/sidebar/subpages}}
+                </div>
+            {{/if}}
+        {{/if}}--}}
+        
+        <div id="contact-us-page" class="page-content {{#if theme_settings.layout '!==' 'left-sidebar'}}{{#unless page.sub_pages}}page-content--centered{{/unless}}{{/if}}">
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+            <h1 class="page-heading">{{ page.title }}</h1>
+    
+            <div class="page-content-body">
+                {{#if forms.contact.success}}
+                    <div id="contact-us-success">{{{lang 'forms.contact_us.successful' shopPath=urls.home}}}</div>
+                {{else}}
+                    {{#if page.title '==' 'Contact'}}
+                        <img style="width: 100%;" src="https://cdn11.bigcommerce.com/s-y75cxdpwt2/product_images/uploaded_images/ny-bakery-and-desserts-interior.jpg" alt="" />
+                        <div class="contactus-form-wrapper">
+                            <div class="cu-box-content">
+                                <div class="cu-content-wrapper">
+                                    <div class="cu-box-overlay">&nbsp;</div>
+                                    <div class="cu-heading-component">
+                                        <h1>How can we help you?</h1>
+                                    </div>
+                                    <div class="cu-content-inner">
+                                        <div class="cu-content-left">
+                                            <h3 class="cu-content-heading">Send us a message</h3>
+                                            {{> components/page/contact-us-form}}
+                                        </div>
+                                        <div class="cu-content-right">
+                                            <h3 class="cu-content-heading">Contact details</h3>
+                                            <div class="contact-details-wrapper">
+                                                <div class="contact-details-item">
+                                                    <div class="contact-icon"><img src="https://i.shgcdn.com/20c2ec02-cc63-4676-a301-975eaf63baae/" alt="" /></div>
+                                                    <div class="contact-info">
+                                                        <div class="contact-info-title">EMAIL US</div>
+                                                        <div class="contact-info-content">
+                                                            <a href="https://nybakeryanddesserts.com/info@nybakeryanddesserts.com">info@nybakeryanddesserts.com</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-details-item">
+                                                    <div class="contact-icon"><img src="https://i.shgcdn.com/0eafc46f-32a6-4b03-ba55-22d540759902/" alt="" /></div>
+                                                    <div class="contact-info">
+                                                        <div class="contact-info-title">CALL US</div>
+                                                        <div class="contact-info-content">(929) 507-9222</div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-details-item">
+                                                    <div class="contact-icon"><img src="https://i.shgcdn.com/5b77238c-c4d1-4c80-972e-cc3152bf62be/" alt="" /></div>
+                                                    <div class="contact-info">
+                                                        <div class="contact-info-title">FIND US</div>
+                                                        <div class="contact-info-content">512 7th Ave, New York, NY 10018<br/><br/>
+                                                        1580 Broadway, New York, NY 10036
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/if}}
+                    
+                    {{{page.content}}}
+                    
+                    {{#if page.title '!==' 'Contact'}}
+                        <div class="franchising-contact-form">
+                            <h1 class="franchising-contact-heading">Contact us</h1>
+                            {{> components/page/contact-us-form}}
+                        </div>
+                    {{/if}}
+                    
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    
+    
+
+</main>
+{{/partial}}
+
+{{> layout/base}}
